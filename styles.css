@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend');
+@import url('https://fonts.googleapis.com/css?family=Dongle');
+body, html {
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    margin: 0; 
+    padding: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif; 
+}
+
+.header-container {
+    margin-bottom: auto; 
+}
+
+
+.container {
+    text-align: center;
+    padding: 0;
+}
+
+.title-container {
+    margin: 10px;
+    font-family: Lexend, sans-serif;
+    margin-bottom: 20px
+}
+
+.desc-container {
+    margin-bottom: 30px;
+    margin-top: -20px;
+    font-family: Lexend, sans-serif;
+}
+
+.desc{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 300px;
+    margin: 0;
+}
+
+.login-container input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #87382F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #632822;
+}
+
+.isko{
+    font-size: 68px;
+    background: #873B32;
+    background: -moz-linear-gradient(left, #873B32 0%, #873B32 24%, #3D1010 100%);
+    background: -webkit-linear-gradient(left, #873B32 0%, #873B32 24%, #3D1010 100%);
+    background: linear-gradient(to right, #873B32 0%, #873B32 24%, #3D1010 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.log{
+    color: #1B5519;
+    font-size: 68px;
+    font-weight: lighter;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 2000px; 
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.header table {
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: -50px;
+}
+
+.header table td {
+    padding: 10px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons img {
+    width: 20px; 
+    height: 22px; 
+    padding: 8px; 
+    max-width: 40px; 
+    max-height: 40px; 
+    border-radius: 50%;
+    background-color: #eaeaea; 
+    margin-left: 0px; 
+}
+
+
+.search-container {
+    text-align: center;
+    margin-top: -30px;
+    position: relative;
+    margin-bottom: 20px
+}
+
+.search {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #87382F;
+    border-radius: 20px;
+    overflow: hidden;
+    top: 0%;
+}
+
+.search-input {
+    width: 500px; 
+    padding: 10px;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.trendingposts-container {
+    overflow:auto; 
+    width: 70%; 
+    min-height: 500px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px;
+    padding: 10px;
+
+  
+}
+
+.trending-header {
+    text-align: center;
+}
+
+.trending-header h2 {
+    font-size: 24px; 
+    color: #612923; 
+}
+
+
+.trendingposts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.post img {
+    width: 250px; 
+    height: 200px; 
+    margin-right: 10px;
+}
+
+.post-info {
+    flex: 1; 
+}
+
+.user {
+    font-weight: bold;
+}
+
+.description {
+    margin-bottom: 5px;
+}
+
+.createpost-container{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 55%;
+}
+
+.createpost button{
+    background-color: #319d2d;
+    color: white;
+    font-family: Dongle;
+    width: 100%;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.createpost button:hover {
+    background-color: #20691E;
+}
