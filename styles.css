@@ -243,3 +243,34 @@ body, html {
 .createpost button:hover {
     background-color: #20691E;
 }
+
+.special-container {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.special-container img[alt="Special Image"]{
+    text-align: center;
+    display: flex;
+    width: 1000px;
+    height: 200px;
+    object-fit: cover;
+
+}
+
+.special-container img[alt="Left Arrow"]{
+    margin-top: 60px;
+    margin-right: 20px;
+    width: auto;
+    height: 10%;
+
+}
+
+.special-container img[alt="Right Arrow"]{
+    margin-top: 60px;
+    margin-left: 20px;
+    width: auto;
+    height: 10%;
+}
