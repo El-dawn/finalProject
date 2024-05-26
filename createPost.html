@@ -4,52 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header-container">
-        <div class="header">
-            <table class="header">
-                <tr class="header-wrap">
-                    <td><h2>ISKOLOG</h2></td>
-                    <td><img src="" alt="pin-icon"></td>
-                    <td><img src="" alt="profile-icon"></td>
-                </tr>
-            </table>
+    <div class="create-post-header-container">
+        <div class="create-post-header">
+            <h1 class="create-post-title">
+                <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
+            </h1>
+            <div class="create-post-nav-icons">
+                <img src="images/thumbtacks 1pin-icon.png" alt="pin-icon">
+                <img src="images/personprofile-icon.png" alt="profile-icon">
+            </div>
         </div>
     </div>
-    <br><br>
 
     <div class="back-container">
-        <img src="" alt="back-icon">
+        <img src="images/Vectorback.png" alt="back-icon">
     </div>
     <br><br>
 
     <div class="create-text">
         <h3>Create A Post</h3>
     </div>
-    <br>
 
     <div class="titletext-container">
         <input type="text" placeholder="Enter title here">
     </div>
-    <br>
+<br>
 
     <div class="contenttext-container">
-        <table>
-            <tr class="edittext-container">
-                <td><img src="" alt="bold-icon"></td>
-                <td><img src="" alt="italicize-icon"></td>
-                <td><img src="" alt="crossout-icon"></td>
-                <td><img src="" alt="insertimage-icon"></td>
-            </tr>
-            <tr>
-                <td colspan="4"><textarea name="content" id="content" cols="30" rows="10" placeholder="Enter content here"></textarea></td>
-            </tr>
-        </table>
+        <div class="edittext-container">
+            <button onclick="formatText('bold')"><img src="images/Bbold.png" alt="bold-icon"></button>
+            <button onclick="formatText('italic')"><img src="images/Iitalicize.png" alt="italicize-icon"></button>
+            <button onclick="insertImage()"><img src="images/Vectoradd-image.png" alt="insertimage-icon"></button>
+        </div>
+        <textarea name="content" id="content" cols="30" rows="10" placeholder="Enter content here"></textarea>
     </div>
-    <br><br>
 
-    <div class="publsh-container">
-        <button>Publish</button>
+    <div class="publish-container">
+        <button>PUBLISH</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
