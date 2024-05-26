@@ -286,11 +286,65 @@ body, html {
     margin-top: 20px;
     border-radius: 120px;
     margin-bottom: 20px;
+    margin-right: 10px;
 }
 
 .information-container{
+    display: block;
     text-align: center;
     border-radius: 10px;
-    margin: 20px 20px 20px 20px;
     box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2); padding: 0px 0px 10px 10px;
+}
+
+.information .name{
+    display: flex;
+    font-family: Lexend, sans-serif;
+}
+.information .username{
+    display: flex;
+    font-family: Lexend, sans-serif;
+}
+.information .email{
+    display: flex;
+    font-family: Lexend, sans-serif;
+}
+.information .dateofbirth{
+    display: flex;
+    font-family: Lexend, sans-serif;
+}
+
+.editInformation-container{
+    align-items: center;
+    display: flex;
+    width: 60%;
+}
+
+.edit-btn button{
+    background-color: #319d2d;
+    color: white;
+    font-family: Dongle;
+    width: 100%;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.edit-btn button:hover {
+    background-color: #20691E;
+}
+
+.signout{;
+    font-size: 25px;
+    margin-left: 60px;
+    margin-right: 800px;
+}
+
+.signout a{;
+}
+
+.signout a:hover{
+    color: #319d2d;
 }
