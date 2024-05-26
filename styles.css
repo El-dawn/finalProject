@@ -336,15 +336,12 @@ body, html {
     background-color: #20691E;
 }
 
-.signout{;
+.logout{
     font-size: 25px;
-    margin-left: 60px;
-    margin-right: 800px;
+    margin-left: 50px;
+    margin-right: 780px;
 }
 
-.signout a{;
-}
-
-.signout a:hover{
+.logout a:hover{
     color: #319d2d;
 }
