@@ -498,6 +498,8 @@ body, html {
     margin: 0 10px;
 }
 
-.logout a:hover {
+.logout a:hover{
     color: #319d2d;
 }
+
+
