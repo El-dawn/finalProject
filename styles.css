@@ -245,7 +245,6 @@ body, html {
     background-color: #20691E;
 }
 
-
 .create-post-header-container {
     width: 100%;
     background-color: #fff;
@@ -383,9 +382,6 @@ body, html {
     justify-content: center;
     width: 60%;
 }
-
-
-
 .special-container {
     display: flex;
     text-align: center;
@@ -488,3 +484,16 @@ body, html {
     color: #319d2d;
 }
 
+=======
+.signout{;
+    font-size: 25px;
+    margin-left: 60px;
+    margin-right: 800px;
+}
+
+.signout a{;
+}
+
+.signout a:hover{
+    color: #319d2d;
+}
