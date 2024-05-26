@@ -4,42 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header-container">
+
+    <div class="header-container" style="display: block; box-shadow: 0 0 10px rgba(0,0,0,0.5); padding: 0px 0px 10px 10px;">
         <div class="header">
-            <ul>
-                <li><img src="" alt="pin-icon"></li>
-                <li><img src="" alt="profile-icon"></li>
-            </ul>
+            <div class="spacer"></div>
+            <table class="nav-icons" style="width: 100%;">
+                <tr>
+                    <td>
+                        <div class="title-container" style="margin-top: -40px;">
+                            <h1 class="title" style="margin-right: 1160px;">
+                                <span class="isko" style="font-size: 40px;">ISKO</span><span class="log" style="font-size: 40px;">LOG</span>
+                            </h1>
+                        </div>
+                        
+                    </td>
+                    <td><img src="images/thumbtacks 1pin-icon.png" alt="pin-icon" style="margin-bottom: 35px;"></td>
+                    <td><img src="images/personprofile-icon.png" alt="" style="margin-bottom: 35px;"></td>
+                </tr>
+            </table>
         </div>
     </div>
 
-    <div class="title-container">
-        <div class="title">
-            <h1>ISKOLOG</h1>
-        </div>
-    </div>
+    <table style="width: 70%;">
+        <tr>
+            <td style="width: 30%; height: 100%;">
+                <div class="display-container">
+                    <div class="profile-container">
+                        <img src="images/profilepicture-icon.png" alt="Profile picture">
+                    </div>
+                    <h1 class="username">Gokugg</h1>
+                    <h2 class="name">Akiro Toriyama</h2>
+                    <h2 class="pronoun">He/Him</h2>
+                    <p class="bio">Even the lowest-born can outdo the elite</p>
+                </div>
+            </td>
+            <td style="">
+                <div class="information-container">
+                    <div class="information">
+                        <div class="name">
+                            <h1 style="margin-left: 20px; margin-right: 100px;">Full Name</h1>
+                            <h1>Akiro Toriyama</h1>
+                        </div>
+                        <hr>
+                        <div class="username">
+                            <h1 style="margin-left: 20px; margin-right: 100px;">Username</h1>
+                            <h1>Gokugg</h1>
+                        </div>
+                        <hr>
+                        <div class="email">
+                            <h1 style="margin-left: 20px; margin-right: 170px;">Email</h1>
+                            <h1>dbgg@up.edu.ph</h1>
+                        </div>
+                        <hr>
+                        <div class="dateofbirth">
+                            <h1 style="margin-left: 20px; margin-right: 55px;">Date Of Birth</h1>
+                            <h1>April 5, 1995</h1>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
 
-    <div class="display-container">
-        <div class="search">
-            <div class="profile picture"><img src="" class ="pfp"></div>
-            <h4>Full name</h4>
-            <h4>pronoun</h4>
-            <h2>about-self</h2>
+    <div class="editInformation-container">
+        <div class="logout">
+            <a href="">Logout</a>
         </div>
-
-    </div>
-
-    <div class="information-container">
-        <div id="information">
-            <h2>Full name</h2>
-            <h2>Username</h2>
-            <h2>Email</h2>
-            <h2>Date of birth</h2>
-        </div>
-    </div>
-    <div class="information-container">
         <div class="edit-btn">
             <button>EDIT</button>
         </div>
