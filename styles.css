@@ -382,6 +382,8 @@ body, html {
     justify-content: center;
     width: 60%;
 }
+
+
 .special-container {
     display: flex;
     text-align: center;
@@ -420,80 +422,82 @@ body, html {
     box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2); padding: 0px 0px 10px 10px;
 }
 
-.profile-container img{
-    margin-top: 20px;
-    border-radius: 120px;
-    margin-bottom: 20px;
-    margin-right: 10px;
+.profile-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 20px auto;
 }
 
-.information-container{
-    display: block;
+.display-container {
     text-align: center;
     border-radius: 10px;
-    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2); padding: 0px 0px 10px 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 45%;
 }
 
-.information .name{
-    display: flex;
-    font-family: Lexend, sans-serif;
-}
-.information .username{
-    display: flex;
-    font-family: Lexend, sans-serif;
-}
-.information .email{
-    display: flex;
-    font-family: Lexend, sans-serif;
-}
-.information .dateofbirth{
-    display: flex;
-    font-family: Lexend, sans-serif;
+.profile-container img {
+    margin-top: 10px;
+    border-radius: 120px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
 }
 
-.editInformation-container{
+.information-container {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 45%;
+}
+
+.information .info-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: Lexend, sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.information h1{
+    font-size: 25px;
+}
+
+.editInformation-container {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    display: flex;
     width: 60%;
+    margin: 20px auto;
+    gap: 110%; 
 }
 
-.edit-btn button{
+
+.edit-btn button {
     background-color: #319d2d;
     color: white;
     font-family: Dongle;
-    width: 100%;
+    width: 100px;
     font-size: 25px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
 .edit-btn button:hover {
     background-color: #20691E;
 }
 
-.logout{
-    font-size: 25px;
-    margin-left: 50px;
-    margin-right: 780px;
+.logout {
+    font-size: 18px;
+    margin: 0 10px;
 }
 
-.logout a:hover{
-    color: #319d2d;
-}
-
-=======
-.signout{;
-    font-size: 25px;
-    margin-left: 60px;
-    margin-right: 800px;
-}
-
-.signout a{;
-}
-
-.signout a:hover{
+.logout a:hover {
     color: #319d2d;
 }
