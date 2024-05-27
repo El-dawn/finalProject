@@ -5,41 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="header-container">
-        <div class="header">
-            <table class="header">
-                <tr class="header-wrap">
-                    <td><h2>ISKOLOG</h2></td>
-                    <td><img src="" alt="pin-icon"></td>
-                    <td><img src="" alt="profile-icon"></td>
-                </tr>
-            </table>
+    <div class="create-post-header-container">
+        <div class="create-post-header">
+            <a href="home.html"><h1 class="create-post-title">
+                <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
+            </h1></a>
+            <div class="create-post-nav-icons">
+                <img src="images/thumbtacks 1pin-icon.png" alt="pin-icon">
+                <img onclick="viewProfile()" src="images/personprofile-icon.png" alt="profile-icon">
+            </div>
         </div>
     </div>
-    <br><br>
 
-    <table class="search">
-        <tr class="search-container">
-            <td><img src="" alt="back-icon"></td>
-            <td><input type="text" class="search" placeholder="Search"><img src="" alt="search icon"></td>
-        </tr>
-    </table>
-    <br><br>
+    <div class="back-container">
+        <img onclick="window.history.back()" src="images/Vectorback.png" alt="back-icon">
+    </div>
 
-    <div class="result-text">
-        <h3>Results for ""</h3>
+
+    <div class="search-container">
+        <div class="search">
+            <input type="text" class="search-input" placeholder="Search">
+            <img src="images/Vectorsearch-icon.png" alt="search icon">
+        </div>
+    </div>    
+
+    <div class="trendingposts-container">
+        <div class="trendingposts">
+            <div class="post">
+                <div class="post">
+                    <img src="images/sample-img.jpeg" alt="Post Image">
+                    <div class="post-info">
+                        <h2 class="title">Post Title</h2>
+                        <span class="user">Username</span>
+                        <p class="description">Small description of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="metadata">
+                            <span class="trend-comments">10 comments</span>
+                            <span class="trend-likes">50 likes</span>
+                            <span class="trend-date">May 24, 2024</span>
+                        </div>
+                    </div>
+                </div>       
+             </div>
+        </div><br>
+
+        <div class="trendingposts">
+            <div class="post">
+                <img src="images/sample-img.jpeg" alt="Post Image">
+                <div class="post-info">
+                    <h2 class="title">Post Title</h2>
+                    <span class="user">Username</span>
+                    <p class="description">Small description of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="metadata">
+                        <span class="trend-comments">10 comments</span>
+                        <span class="trend-likes">50 likes</span>
+                        <span class="trend-date">May 24, 2024</span>
+                    </div>
+                </div>
+            </div>       
+        </div>
+
+
     </div>
-    <br>
-    <div class="resuls-wrap">
-        <h1>placeholder for results table</h1>
-    </div>
-    <br><br><br>
 
     <div class="createpost-container">
         <div class="createpost">
-            <button>+ Create A Post</button>
+            <button onclick="createPost()">+ CREATE POST</button>
         </div>
     </div>    
      

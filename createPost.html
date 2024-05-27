@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Post</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="create-post-header-container">
+   <div class="create-post-header-container">
         <div class="create-post-header">
-            <h1 class="create-post-title">
+            <a href="home.html"><h1 class="create-post-title">
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
-            </h1>
+            </h1></a>
             <div class="create-post-nav-icons">
                 <img src="images/thumbtacks 1pin-icon.png" alt="pin-icon">
-                <img src="images/personprofile-icon.png" alt="profile-icon">
+                <img onclick="viewProfile()" src="images/personprofile-icon.png" alt="profile-icon">
             </div>
         </div>
     </div>
 
     <div class="back-container">
-        <img src="images/Vectorback.png" alt="back-icon">
+        <img onclick="window.history.back()" src="images/Vectorback.png" alt="back-icon">
     </div>
+
     <br><br>
 
     <div class="create-text">
