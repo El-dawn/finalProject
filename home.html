@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="header-container">
@@ -13,7 +14,7 @@
             <table class="nav-icons">
                 <tr>
                     <td><img src="images/thumbtacks 1pin-icon.png" alt="pin-icon"></td>
-                    <td><img src="images/personprofile-icon.png" alt=""></td>
+                    <td><img onclick="viewProfile()" src="images/personprofile-icon.png" alt=""></td>
                 </tr>
             </table>
         </div>
@@ -45,14 +46,16 @@
                 <div class="post-info">
                     <h2 class="title">Post Title</h2>
                     <span class="user">Username</span>
-                    <p class="description">Small description of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="description">Lorem ipsum dolor sit amet. Est repellendus inventore qui officia nostrum eum quisquam iure non libero soluta ut dignissimos excepturi. Nam corporis quibusdam ea veniam esse et illo excepturi qui dolorem consequatur est molestiae fuga rem illum labore a deserunt assumenda.</p>
                     <div class="metadata">
-                        <span class="comments">10 comments</span>
-                        <span class="likes">50 likes</span>
-                        <span class="date">May 24, 2024</span>
+                        <span class="trend-comments">10 comments</span>
+                        <span class="trend-likes">50 likes</span>
+                        <span class="trend-date">May 24, 2024</span>
                     </div>
                 </div>
-            </div>
+            </div>            
+
+
             
             
             <div class="post">
@@ -62,12 +65,12 @@
                     <span class="user">Username</span>
                     <p class="description">Small description of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="metadata">
-                        <span class="comments">10 comments</span>
-                        <span class="likes">50 likes</span>
-                        <span class="date">May 24, 2024</span>
+                        <span class="trend-comments">10 comments</span>
+                        <span class="trend-likes">50 likes</span>
+                        <span class="trend-date">May 24, 2024</span>
                     </div>
                 </div>
-            </div>
+            </div>            
 
 
             <div class="post">
@@ -77,18 +80,20 @@
                     <span class="user">Username</span>
                     <p class="description">Small description of the post. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     <div class="metadata">
-                        <span class="comments">10 comments</span>
-                        <span class="likes">50 likes</span>
-                        <span class="date">May 24, 2024</span>
+                        <span class="trend-comments">10 comments</span>
+                        <span class="trend-likes">50 likes</span>
+                        <span class="trend-date">May 24, 2024</span>
                     </div>
                 </div>
-            </div>
+            </div>            
+
+
         </div>
     </div>
     
     <div class="createpost-container">
         <div class="createpost">
-            <button>+ CREATE POST</button>
+            <button onclick="createPost()">+ CREATE POST</button>
         </div>
     </div>
 

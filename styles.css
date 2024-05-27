@@ -72,6 +72,10 @@ body, html {
     background-color: #632822;
 }
 
+a{
+    text-decoration: none;
+}
+
 .isko{
     font-size: 68px;
     background: #873B32;
@@ -207,13 +211,26 @@ body, html {
 }
 
 .post img {
-    width: 250px; 
-    height: 200px; 
+    width: 250px;
+    height: 200px;
     margin-right: 10px;
 }
 
 .post-info {
-    flex: 1; 
+    flex: 1;
+}
+
+.metadata {
+    display: flex;
+    align-items: center; /* Aligns metadata vertically */
+}
+
+.trend-likes {
+    margin-left: 20px; /* Increased margin for better spacing */
+}
+
+.trend-date {
+    margin-left: auto;
 }
 
 .user {
@@ -309,9 +326,7 @@ body, html {
 
 .back-container {
     padding: 10px;
-    position: absolute;
-    top: 80px;
-    left: 100px;
+    margin-right: 79%;
 }
 
 .back-container img {
@@ -503,3 +518,170 @@ body, html {
 }
 
 
+.main-post-container {
+    width: 80%;
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-post-picture {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.main-post-picture img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.post-header {
+    margin-top: 10px;
+}
+
+.post-title {
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.post-details {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.post-details h4 {
+    font-size: 14px;
+    margin: 0;
+}
+
+hr{
+    width: 80%;
+}
+
+.content-post {
+    margin-top: 20px;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto; 
+}
+
+.content-post p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.content-post img {
+    max-width: 50%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+.comment-container {
+    width: 60%; 
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.like-comment-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.like-comment-info p {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: -5px;
+}
+
+.like-button img, .comment-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.comment-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment-btn .profile-picture img {
+    width: 40px;
+    height: 40px;
+}
+
+.comment-btn form {
+    display: flex;
+    align-items: center;
+}
+
+
+.comment-btn input[type="text"] {
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px; 
+    max-width: 100%;
+}
+
+
+.comment-btn button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #319d2d;
+    color: white;
+    cursor: pointer;
+}
+
+.comment-btn button:hover {
+    background-color: #20691E;
+}
+
+.comment {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.comment .profile-picture {
+    margin-right: 10px;
+}
+
+.comment .profile-picture img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-content h2, .comment-content h4, .comment-content h3 {
+    margin: 0;
+    font-size: 14px;
+}
