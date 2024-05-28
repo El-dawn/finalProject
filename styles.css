@@ -366,9 +366,10 @@ a{
     cursor: pointer;
 }
 
-.edittext-container button img {
+.edittext-container button img, img[alt="insertimage-icon"] {
     width: 10px;
     height: 10px;
+    cursor: pointer;
 }
 
 .publish-container {
@@ -396,45 +397,6 @@ a{
 .publish-container {
     justify-content: center;
     width: 60%;
-}
-
-
-.special-container {
-    display: flex;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.special-container img[alt="Special Image"]{
-    text-align: center;
-    display: flex;
-    width: 1000px;
-    height: 200px;
-    object-fit: cover;
-
-}
-
-.special-container img[alt="Left Arrow"]{
-    margin-top: 60px;
-    margin-right: 20px;
-    width: auto;
-    height: 10%;
-
-}
-
-.special-container img[alt="Right Arrow"]{
-    margin-top: 60px;
-    margin-left: 20px;
-    width: auto;
-    height: 10%;
-}
-
-.display-container{
-    text-align: center;
-    border-radius: 10px;
-    margin: 20px 20px 20px 20px;
-    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2); padding: 0px 0px 10px 10px;
 }
 
 .profile-content {
@@ -561,7 +523,7 @@ a{
     margin: 0;
 }
 
-hr{
+.post-hr{
     width: 80%;
 }
 
