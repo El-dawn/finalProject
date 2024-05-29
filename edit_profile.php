@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
  
  
-    if(isset($_FILES['test']) && $_FILES['test']['error'] != 4){
+    if(isset($_FILES['test']) && $_FILES['test']['error'] == 0){
        $fileName = $_FILES['test']['name'];
        $fileSize = $_FILES['test']['size'];
        $tmpName = $_FILES['test']['tmp_name'];
@@ -38,12 +38,9 @@ if(isset($_POST['submit'])){
           $upload = $conn->prepare("UPDATE users SET image = ? WHERE id = ?");
           $upload->execute([$newImageName, $user_id]);
           move_uploaded_file($tmpName, 'img/' . $newImageName);
-          echo "<script>alert('Successfully Added'); document.location.href = 'home.php';</script>";
+          echo "<script>alert('Successfully Added');</script>";
        }
-    } else {
-       echo "<script>alert('Image Does Not Exist');</script>";
     }
- 
     if (!empty($name)) {
        $update_name = $conn->prepare("UPDATE `users` SET name = ? WHERE id = ?");
        $update_name->execute([$name, $user_id]);
@@ -79,6 +76,7 @@ if(isset($_POST['submit'])){
        $update_dob = $conn->prepare("UPDATE `users` SET date_of_birth = ? WHERE id = ?");
        $update_dob->execute([$date_of_birth, $user_id]);
     }
+    header('location:profile.php');
  }
  ?>
 <!DOCTYPE html>
@@ -122,8 +120,8 @@ if(isset($_POST['submit'])){
             </div>
             <h1 class="username"><?= $fetch_profile['username']; ?></h1>
             <h2 class="name"><?=$fetch_profile['name']; ?></h2>
-            <h2 class="pronoun"><input type="text" name="pronouns" placeholder="<?php if(isset($pronouns)) {echo $fetch_profile['pronouns'];} else { echo "pronouns"; } ?>"  ></h2>
-            <p class="bio"><input type="text" name="about" placeholder="<?php if(isset($about)) {echo $fetch_profile['about'];} else { echo "say something about yourself"; } ?>" ></p>
+            <h2 class="pronoun"><input type="text" name="pronouns" placeholder="<?= isset($fetch_profile['pronouns']) ? $fetch_profile['pronouns'] : 'pronouns'; ?>"  ></h2>
+            <p class="bio"><input type="text" name="about" placeholder="<?= isset($fetch_profile['about']) ? $fetch_profile['about'] : 'say something about yourself'; ?>" ></p>
         </div>
         
         <div class="information-container">
@@ -149,17 +147,12 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
         </div>
-    </div>
-    </form>
-
-    <div class="editInformation-container">
-    <form action="profile.php" method="post">
-    <div class="edit-btn">
+      </div>
+      <div class="editInformation-container">
+         <div class="edit-btn">
             <button type = 'submit' name = 'submit' class ='btn'>SAVE</button>
+      </div>
     </div>
     </form>
-    </div>
-
-
 </body>
 </html>
