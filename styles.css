@@ -240,34 +240,12 @@ a{
 .description {
     margin-bottom: 5px;
 }
-
-.createpost-container{
-    margin-top: 20px;
-    margin-bottom: 50px;
-    width: 55%;
-}
-
-.createpost button{
-    background-color: #319d2d;
-    color: white;
-    font-family: Dongle;
-    width: 100%;
-    font-size: 25px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.createpost button:hover {
-    background-color: #20691E;
-}
-
 .create-post-header-container {
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -281,10 +259,9 @@ a{
 }
 
 .create-post-title {
-    font-size: 24px; 
+    font-size: 24px;
     font-family: 'Lexend', sans-serif;
     margin: 0;
-    order: 1; 
 }
 
 .create-post-isko {
@@ -303,19 +280,17 @@ a{
 .create-post-nav-icons {
     display: flex;
     gap: 10px;
-    order: 2; 
-    margin-left: auto; 
+    margin-left: auto;
 }
 
 .create-post-nav-icons img {
-    width: 20px; 
-    height: 22px; 
-    padding: 8px; 
-    max-width: 40px; 
-    max-height: 40px; 
+    width: 20px;
+    height: 22px;
+    padding: 8px;
+    max-width: 40px;
+    max-height: 40px;
     border-radius: 50%;
-    background-color: #eaeaea; 
-    margin-left: 0px; 
+    background-color: #eaeaea;
     transition: transform 0.2s;
     cursor: pointer;
 }
@@ -342,7 +317,7 @@ a{
     font-weight: lighter;
 }
 
-.titletext-container input, 
+.titletext-container input,
 .contenttext-container textarea {
     padding: 10px;
     border: 1px solid #ccc;
@@ -352,29 +327,17 @@ a{
     width: 100%;
 }
 
-.edittext-container {
-    display: flex-start;
+.upload-image {
+    display: flex;
     gap: 10px;
     width: 100%;
     justify-content: center;
     margin-bottom: 10px;
-}
-
-.edittext-container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.edittext-container button img, img[alt="insertimage-icon"] {
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
+    margin-left: -60%;
 }
 
 .publish-container {
     text-align: center;
-    /* width: 100%; */
 }
 
 .publish-container button {
@@ -396,9 +359,14 @@ a{
 .contenttext-container,
 .publish-container {
     justify-content: center;
-    width: 60%;
-}
+    width: 200%; 
+    margin: 0 auto; 
+    margin-left: -50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
 .profile-content {
     display: flex;
     flex-wrap: wrap;
