@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
 </head>
 <body class="Login_Field">
     <div class="container" style="margin-top: 10%;">
-        <div class="title-container">
+    <div class="title-container">
             <h1 class="title">
                 <span class="isko">ISKO</span><span class="log">LOG</span>
             </h1>
@@ -65,23 +65,23 @@ if(isset($_POST['submit'])){
             <p class="desc">UPV's Blogging Platform</p>
         </div>
         <div class="login-container">
-        <form action="" method="post">
-            <h1>Register</h1>
-            <div class="input-box">                
-                <input type="text" name= "name" placeholder="Enter name" required>
-            </div>
-            <div class="input-box">                
-                <input type="text" name= "email" placeholder="Enter email" required>
-            </div>
-            <div class="input-box">
-                <input type="password" name= "pass" placeholder="Enter password" required>
-            </div>
-            <div class="input-box">
-                <input type="password" name= "cpass" placeholder="Confirm Password" required>
-            </div>
-            <button type="submit" name= "submit" class="btn">Register Now</button>
-        </form>
-</div>
+            <form action="" method="post">
+                <h1>Register</h1>
+                <div class="input-box">                
+                    <input type="text" name= "name" placeholder="Enter name" required>
+                </div>
+                <div class="input-box">                
+                    <input type="text" name= "email" placeholder="Enter email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name= "pass" placeholder="Enter password" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" name= "cpass" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit" name= "submit" class="btn">Register Now</button>
+            </form>
+        </div>
     </div>
 </body>
 </html> 

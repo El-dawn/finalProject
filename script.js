@@ -1,7 +1,7 @@
 function createPost() {
-    window.location.href = "createPost.html";
+    window.location.href = "createPost.php";
 }
 
 function viewProfile() {
-    window.location.href = "profile.html";
+    window.location.href = "profile.php";
 }
