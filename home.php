@@ -26,7 +26,9 @@ if(isset($_SESSION['user_id'])){
         <?php
             $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
             $select_profile->execute([$user_id]);
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            if($select_profile->rowCount() > 0){
+                $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+            }
             $count_user_comments = $conn->prepare("SELECT * FROM `comments` WHERE user_id = ?");
             $count_user_comments->execute([$user_id]);
             $total_user_comments = $count_user_comments->rowCount();
@@ -37,7 +39,7 @@ if(isset($_SESSION['user_id'])){
             <div class="spacer"></div>
             <table class="nav-icons">
                 <tr>
-                    <td><img onclick="viewProfile()" src="img/<?php if ($fetch_profile['image'] == ''){echo "default.png";} else $fetch_profile['image']; ?>" alt=""></td>
+                    <td><img onclick="viewProfile()" src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt=""></td>
                 </tr>
             </table>
         </div>
@@ -52,10 +54,10 @@ if(isset($_SESSION['user_id'])){
 
 
     <div class="search-container">
-        <form action = 'results.php' method = "post">
+        <form action = 'results.php' method = "post" enctype="multipart/form-data">
         <div class="search">
-            <input type="text" class="search-input" placeholder="Search">
-            <button type="submit" opacity:0 ><img src="images/Vectorsearch-icon.png" alt="search icon"></button>
+            <input type="text" class="search-input" name="search-input" placeholder="Search">
+            <input type="image" name="submit" src="images/Vectorsearch-icon.png" alt="Submit" class="search-icon">
         </div>
         </form>
     </div>    
@@ -75,50 +77,57 @@ if(isset($_SESSION['user_id'])){
         }
             $select_posts = $conn->prepare("SELECT * FROM `posts` ORDER BY likes");
             $select_posts->execute();
+        ?>
+        <?php
             if($select_posts->rowCount() > 0){
                 while($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)){
+
                     $post_id = $fetch_posts['id'];
                     $count_post_comments = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ?");
                     $count_post_comments->execute([$post_id]);
                     $total_post_comments = $count_post_comments->rowCount(); 
      
-                    $count_post_likes = $conn->prepare("SELECT * FROM `likes` WHERE post_id = ?");
+                    $count_post_likes = $conn->prepare("SELECT * FROM `likes` WHERE post_id = ?");                            
                     $count_post_likes->execute([$post_id]);
                     $total_post_likes = $count_post_likes->rowCount();
-     
+         
                     $confirm_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id = ? AND post_id = ?");
                     $confirm_likes->execute([$user_id, $post_id]);
-        ?>
-        <form class="box" method="post">
-        <input type="hidden" name="post_id" value="<?= $post_id; ?>">       
-        <div class="trendingposts">
-            <div class="post">
-                <?php
-                        if($fetch_posts['image'] != ''){  
                     ?>
-                        <img src="imgpost/<?= $fetch_posts['image']; ?>" alt="Post Image">
+
+                <div class="trendingposts">
+                <div class="post">
+                <?php
+                if($fetch_posts['image'] != ''){  
+                ?>   
+                    <img src="imgpost/<?= $fetch_posts['image']; ?>" alt="Post Image">
                     <?php
                     }
                 ?>
                 <div class="post-info">
+                <form class="box" method="post">
+
                     <h2 class="title"><?= $fetch_posts['title']; ?></h2>
                     <span class="user"><?= $fetch_posts['name']; ?></span>
                     <p class="description"><?= $fetch_posts['content']; ?></p>
+                    <a href="post.php?post_id=<?= $post_id; ?>" class="inline-btn">read more</a>
                     <div class="metadata">
+                        <input type="hidden" name="post_id" value= <?php echo $post_id;?>>
                         <span class="trend-comments"><?php echo $total_post_comments?> comments</span>
                         <span class="trend-likes"><?php echo $total_post_likes?> likes</span>
                         <span class="trend-date"><?php echo convertdate($fetch_posts['date']); ?></span>
                     </div>
+                    </form>
                 </div>
-            </div>            
-            </form>                
+            </div>                            
+        </div>
+        <hr>
         <?php
                 }
             }else{
                 echo '<p class="empty">no posts aded yet!</p>';
             }
-        ?>
-        </div>
+            ?>
     </div>
     
     <div class="createpost-container">
