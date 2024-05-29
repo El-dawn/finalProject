@@ -29,7 +29,7 @@ if($select_profile->rowCount() > 0){
 <body>
     <div class="create-post-header-container">
         <div class="create-post-header">
-            <a href="home.html"><h1 class="create-post-title">
+            <a href="home.php"><h1 class="create-post-title">
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
             </h1></a>
             <div class="create-post-nav-icons">
@@ -88,15 +88,19 @@ if($select_profile->rowCount() > 0){
                 <div class="post">
                 <?php
                 if($fetch_posts['image'] != ''){  
-                ?>
+                ?>   
                     <img src="imgpost/<?= $fetch_posts['image']?>"; alt="Post Image">
-                <?php
-                }
+                    <?php
+                    }
+                    else{
+                        echo '<img src="imgpost/default.jpeg">';
+                    }
                 ?>
                         <div class="post-info">
                         <h2 class="title"><?= $fetch_posts['title']; ?></h2>
                         <span class="user"><?= $fetch_posts['name']; ?></span>
                         <p class="description"><?= $fetch_posts['content']; ?></p>
+                                            <a href="post.php?post_id=<?= $post_id; ?>" class="inline-btn">read more</a>
                         <div class="metadata">
                             <span class="trend-comments"><?php echo $total_post_comments ?> comments</span>
                             <span class="trend-likes"><?php echo $total_post_likes?> likes</span>

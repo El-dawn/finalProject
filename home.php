@@ -100,8 +100,11 @@ if(isset($_SESSION['user_id'])){
                 <?php
                 if($fetch_posts['image'] != ''){  
                 ?>   
-                    <img src="imgpost/<?= $fetch_posts['image']; ?>" alt="Post Image">
+                    <img src="imgpost/<?= $fetch_posts['image']?>"; alt="Post Image">
                     <?php
+                    }
+                    else{
+                        echo '<img src="imgpost/default.jpeg">';
                     }
                 ?>
                 <div class="post-info">
