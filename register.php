@@ -52,14 +52,19 @@ if(isset($_POST['submit'])){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="Login_Field">
-    <div class="wrapper">
-        <div class="title-container">
-            <div class="title">
-                <h1>ISKOLOG</h1>
-            </div>
+<div class="container" style="margin-top: 10%;">
+<div class="title-container">
+            <h1 class="title">
+                <span class="isko">ISKO</span><span class="log">LOG</span>
+            </h1>
         </div>
+        <div class="desc-container">
+            <p class="desc">UPV's Blogging Platform</p>
+        </div>
+        <div class="login-container">
         <form action="" method="post">
             <h1>Register</h1>
             <div class="input-box">                
@@ -76,6 +81,7 @@ if(isset($_POST['submit'])){
             </div>
             <button type="submit" name= "submit" class="btn">Register Now</button>
         </form>
+</div>
     </div>
 </body>
 </html> 
