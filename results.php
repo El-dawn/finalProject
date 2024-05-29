@@ -10,6 +10,11 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
+$select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+$select_profile->execute([$user_id]);
+if($select_profile->rowCount() > 0){
+    $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+}
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +33,7 @@ if(isset($_SESSION['user_id'])){
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
             </h1></a>
             <div class="create-post-nav-icons">
-                <img onclick="viewProfile()" src="images/personprofile-icon.png" alt="profile-icon">
+                <img onclick="viewProfile()" src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt="profile-icon">
             </div>
         </div>
     </div>
@@ -39,10 +44,12 @@ if(isset($_SESSION['user_id'])){
 
 
     <div class="search-container">
+    <form action = 'results.php' method = "post" enctype="multipart/form-data">
         <div class="search">
-            <input type="text" class="search-input" placeholder="Search">
-            <img src="images/Vectorsearch-icon.png" alt="search icon">
+        <input type="text" class="search-input" name="search-input" placeholder="Search">
+            <input type="image" name="submit" src="images/Vectorsearch-icon.png" alt="Submit" class="search-icon">
         </div>
+    </form>
     </div>    
 
     <div class="trendingposts-container">
@@ -55,7 +62,8 @@ if(isset($_SESSION['user_id'])){
         
             return $formattedDate;
         }
-         $search_box = $_POST['search_box'];
+
+         $search_box = $_POST['search-input'];
          $select_posts = $conn->prepare("SELECT * FROM `posts` WHERE title LIKE '%{$search_box}%' OR name LIKE '%{$search_box}%' ");
          $select_posts->execute();
          if($select_posts->rowCount() > 0){
@@ -81,17 +89,17 @@ if(isset($_SESSION['user_id'])){
                 <?php
                 if($fetch_posts['image'] != ''){  
                 ?>
-                    <img src="uploaded_img/<?= $fetch_posts['image']?>; alt="Post Image">
-                    <div class="post-info">
+                    <img src="imgpost/<?= $fetch_posts['image']?>"; alt="Post Image">
                 <?php
                 }
                 ?>
+                        <div class="post-info">
                         <h2 class="title"><?= $fetch_posts['title']; ?></h2>
-                        <span class="user">Username</span>
+                        <span class="user"><?= $fetch_posts['name']; ?></span>
                         <p class="description"><?= $fetch_posts['content']; ?></p>
                         <div class="metadata">
-                            <span class="trend-comments"><?php echo $total_post_comments?></span>
-                            <span class="trend-likes"><?php echo $total_post_likes?></span>
+                            <span class="trend-comments"><?php echo $total_post_comments ?> comments</span>
+                            <span class="trend-likes"><?php echo $total_post_likes?> likes</span>
                             <span class="trend-date"><?php echo convertdate($fetch_posts['date']); ?></span>
                         </div>
                     </div>
