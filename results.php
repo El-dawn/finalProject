@@ -53,7 +53,7 @@ if($select_profile->rowCount() > 0){
     </div>    
 
     <div class="trendingposts-container">
-        <div class="trendingposts">
+        
         <?php
         function convertdate($dateStr) {
             $date = DateTime::createFromFormat('Y-m-d', $dateStr);
@@ -83,9 +83,9 @@ if($select_profile->rowCount() > 0){
                $confirm_likes->execute([$user_id, $post_id]);
         
       ?>
+      <div class="trendingposts">
       <form class= "" method = "post">
             <div class="post">
-                <div class="post">
                 <?php
                 if($fetch_posts['image'] != ''){  
                 ?>   
@@ -107,21 +107,16 @@ if($select_profile->rowCount() > 0){
                             <span class="trend-date"><?php echo convertdate($fetch_posts['date']); ?></span>
                         </div>
                     </div>
-                </div>       
+                </div>
+                </form>       
              </div>
-             <br>
-        </div>
-        </form>
-        <?php
+             <?php
             }
          }else{
             echo '<p class="empty">no posts aded yet!</p>';
         }
         ?>
-        
-
-
-    </div>
+        </div>
 
     <div class="createpost-container">
         <div class="createpost">
