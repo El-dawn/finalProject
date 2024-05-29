@@ -75,7 +75,7 @@ if(isset($_SESSION['user_id'])){
         
             return $formattedDate;
         }
-            $select_posts = $conn->prepare("SELECT * FROM `posts` ORDER BY likes");
+            $select_posts = $conn->prepare("SELECT * FROM `posts` ORDER BY likes DESC");
             $select_posts->execute();
         ?>
         <?php
@@ -83,6 +83,7 @@ if(isset($_SESSION['user_id'])){
                 while($fetch_posts = $select_posts->fetch(PDO::FETCH_ASSOC)){
 
                     $post_id = $fetch_posts['id'];
+
                     $count_post_comments = $conn->prepare("SELECT * FROM `comments` WHERE post_id = ?");
                     $count_post_comments->execute([$post_id]);
                     $total_post_comments = $count_post_comments->rowCount(); 
@@ -90,6 +91,9 @@ if(isset($_SESSION['user_id'])){
                     $count_post_likes = $conn->prepare("SELECT * FROM `likes` WHERE post_id = ?");                            
                     $count_post_likes->execute([$post_id]);
                     $total_post_likes = $count_post_likes->rowCount();
+
+                    $update_like = $conn->prepare("UPDATE `posts` SET likes = ? WHERE id = ?");
+                    $update_like->execute([$total_post_likes, $post_id]);
          
                     $confirm_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id = ? AND post_id = ?");
                     $confirm_likes->execute([$user_id, $post_id]);

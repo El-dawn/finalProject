@@ -11,6 +11,8 @@ if(isset($_SESSION['user_id'])){
    $user_id = '';
 };
 
+include 'like_posts.php';
+
 $select_profile = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
 $select_profile->execute([$user_id]);
 if($select_profile->rowCount() > 0){
@@ -80,7 +82,7 @@ if(isset($_POST['delete_comment'])){
     
         
         <div class="create-post-header">
-            <a href="home.html"><h1 class="create-post-title">
+            <a href="home.php"><h1 class="create-post-title">
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
             </h1></a>
             <div class="create-post-nav-icons">
@@ -176,9 +178,13 @@ if(isset($_POST['delete_comment'])){
 
     <div class="comment-container">
         <div class="like-comment-info">
-            <button class="like-button">
-                <img src="images/Vectorlike-icon.png" class="like" alt="like">
+            <form method = "post">
+            <input type="hidden" name="post_id" value="<?= $post_id; ?>">
+            <input type="hidden" name="user-id" value="<?= $fetch_posts['user_id']; ?>">
+            <button class="like-button" type = 'submit' name="like_post">
+                <img src="images/Vectorlike-icon.png" class="like" alt="like" style="<?php if($confirm_likes->rowCount() > 0){ echo 'color:blue opacity: 1'; }else{echo 'color:blue opacity: 0.4';} ?>">
             </button>
+            </form>
             <p><?php echo $total_post_likes?></p> 
             
             <img src="images/Vectorcomment-icon.png" class="comment-icon" alt="comment-icon">

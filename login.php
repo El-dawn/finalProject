@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
       $select_user->execute([$email, $pass]);
    } else {
       $name = $user;
-      $select_user = $conn->prepare("SELECT * FROM `users` WHERE name = ? AND password = ?");
+      $select_user = $conn->prepare("SELECT * FROM `users` WHERE username = ? AND password = ?");
       $select_user->execute([$name, $pass]);
    }
 
