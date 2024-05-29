@@ -124,7 +124,7 @@ if(isset($_POST['submit'])){
             <p class="bio"><input type="text" name="about" placeholder="<?= isset($fetch_profile['about']) ? $fetch_profile['about'] : 'say something about yourself'; ?>" ></p>
         </div>
         
-        <div class="information-container">
+        <div>
             <div class="information">
                 <div class="info-row">
                     <h1>Full Name</h1>
