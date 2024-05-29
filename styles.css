@@ -413,7 +413,7 @@ a{
     margin: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
-    width: 45%;
+    width: auto;
 }
 
 .profile-container img {

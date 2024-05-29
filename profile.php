@@ -47,7 +47,7 @@ function convertdate($dateStr) {
     </div>
 
     <div class="back-container">
-        <img onclick="window.history.back()" src="images/Vectorback.png" alt="back-icon">
+        <img onclick="window.location.href='home.php'" src="images/Vectorback.png" alt="back-icon">
     </div>
 
     <br><br>

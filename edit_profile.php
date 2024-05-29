@@ -111,7 +111,7 @@ if(isset($_POST['submit'])){
 
     <br><br>
 
-    <div class="profile-content">
+    <div class="profile-contt">
     <form action="" method="post" enctype="multipart/form-data"> 
         <div class="display-container">
             <div class="profile-container">
@@ -123,8 +123,9 @@ if(isset($_POST['submit'])){
             <h2 class="pronoun"><input type="text" name="pronouns" placeholder="<?= isset($fetch_profile['pronouns']) ? $fetch_profile['pronouns'] : 'pronouns'; ?>"  ></h2>
             <p class="bio"><input type="text" name="about" placeholder="<?= isset($fetch_profile['about']) ? $fetch_profile['about'] : 'say something about yourself'; ?>" ></p>
         </div>
+        <br><br>
         
-        <div class="information-container">
+        <div>
             <div class="information">
                 <div class="info-row">
                     <h1>Full Name</h1>
