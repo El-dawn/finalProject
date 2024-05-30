@@ -55,7 +55,7 @@ function convertdate($dateStr) {
     <div class="profile-content">
         <div class="display-container">
             <div class="profile-container">
-                <img src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt="Profile picture">
+                <img src="img/<?php if($fetch_profile['image'] != '') { echo $fetch_profile['image'];} else{ echo 'default.png';}  ?>" alt="Profile picture">
             </div>
             <h1 class="username"><?= $fetch_profile['username']; ?></h1>
             <h2 class="name"><?=$fetch_profile['name']; ?></h2>

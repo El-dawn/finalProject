@@ -39,7 +39,7 @@ if(isset($_SESSION['user_id'])){
             <div class="spacer"></div>
             <table class="nav-icons">
                 <tr>
-                    <td><img onclick="viewProfile()" src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt=""></td>
+                    <td><img onclick="viewProfile()" src="img/<?php if($fetch_profile['image'] != '') { $fetch_profile['image'];} else{ echo 'default.png';}  ?><?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt=""></td>
                 </tr>
             </table>
         </div>
@@ -54,7 +54,7 @@ if(isset($_SESSION['user_id'])){
 
 
     <div class="search-container">
-        <form action = 'results.php' method = "post" enctype="multipart/form-data">
+        <form action = 'results.php' method = "get" enctype="multipart/form-data">
         <div class="search">
             <input type="text" class="search-input" name="search-input" placeholder="Search">
             <input type="image" name="submit" src="images/Vectorsearch-icon.png" alt="Submit" class="search-icon">
@@ -112,7 +112,7 @@ if(isset($_SESSION['user_id'])){
                     }
                 ?>
                 <div class="post-info">
-                <form class="box" method="post">
+                <form class="box" method="get">
 
                     <h2 class="title"><?= $fetch_posts['title']; ?></h2>
                     <span class="user"><?= $fetch_posts['name']; ?></span>

@@ -86,7 +86,7 @@ if(isset($_POST['delete_comment'])){
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
             </h1></a>
             <div class="create-post-nav-icons">
-                <img onclick="viewProfile()" src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt="profile-icon">
+                <img onclick="viewProfile()" src="img/<?php if($fetch_profile['image'] != '') { echo $fetch_profile['image'];} else{ echo 'default.png';}  ?>" alt="profile-icon">
             </div>
         </div>
     </div>
@@ -163,7 +163,7 @@ if(isset($_POST['delete_comment'])){
     <div class="comment-container">
         <div class="comment">
             <div class="profile-picture">
-                <img src="img/<?php echo $user_pfp; ?>" class="pfp" alt="<?php echo $fetch_comments['user_name'];?>">
+                <img src="img/<?php if($user_pfp != '') { echo $user_pfp;} else{ echo 'default.png';}  ?>" class="pfp" alt="<?php echo $fetch_comments['user_name'];?>">
             </div>
             <div class="comment-content">
                 <h2><?= $fetch_comments['user_name']; ?></h2>
@@ -178,11 +178,11 @@ if(isset($_POST['delete_comment'])){
 
     <div class="comment-container">
         <div class="like-comment-info">
-            <form method = "post">
+            <form method = "get">
             <input type="hidden" name="post_id" value="<?= $post_id; ?>">
-            <input type="hidden" name="user-id" value="<?= $fetch_posts['user_id']; ?>">
+            <input type="hidden" name="user-id" value="<?= $fetch_profile['id']; ?>">
             <button class="like-button" type = 'submit' name="like_post">
-                <img src="images/Vectorlike-icon.png" class="like" alt="like" style="<?php if($confirm_likes->rowCount() > 0){ echo 'color:blue opacity: 1'; }else{echo 'color:blue opacity: 0.4';} ?>">
+                <img src='images/<?php if($confirm_likes->rowCount() > 0) {echo 'Vectorlike-icon1.png';}  else {echo 'Vectorlike-icon.png';}  ?>' class="like" alt="like" style=" width:20px height:22px;">
             </button>
             </form>
             <p><?php echo $total_post_likes?></p> 
@@ -192,7 +192,7 @@ if(isset($_POST['delete_comment'])){
         </div>
         <div class="comment-btn">
             <div class="profile-picture">
-                <img src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" class="pfp" alt="pfp">
+                <img src="img/<?php if($fetch_profile['image'] != '') { echo $fetch_profile['image'];} else{ echo 'default.png';}  ?>" class="pfp" alt="pfp">
             </div>
             <form action="" method="post">
                 <input type="hidden" name="user_id" value="<?= $fetch_profile['id']; ?>">

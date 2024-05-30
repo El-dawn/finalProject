@@ -33,7 +33,7 @@ if($select_profile->rowCount() > 0){
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
             </h1></a>
             <div class="create-post-nav-icons">
-                <img onclick="viewProfile()" src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt="profile-icon">
+                <img onclick="viewProfile()" src="img/<?php if($fetch_profile['image'] != '') { echo $fetch_profile['image'];} else{ echo 'default.png';}  ?>" alt="profile-icon">
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@ if($select_profile->rowCount() > 0){
 
 
     <div class="search-container">
-    <form action = 'results.php' method = "post" enctype="multipart/form-data">
+    <form action = 'results.php' method = "get" enctype="multipart/form-data">
         <div class="search">
         <input type="text" class="search-input" name="search-input" placeholder="Search">
             <input type="image" name="submit" src="images/Vectorsearch-icon.png" alt="Submit" class="search-icon">
@@ -63,7 +63,7 @@ if($select_profile->rowCount() > 0){
             return $formattedDate;
         }
 
-         $search_box = $_POST['search-input'];
+         $search_box = $_GET['search-input'];
          $select_posts = $conn->prepare("SELECT * FROM `posts` WHERE title LIKE '%{$search_box}%' OR name LIKE '%{$search_box}%' ");
          $select_posts->execute();
          if($select_posts->rowCount() > 0){
@@ -110,6 +110,7 @@ if($select_profile->rowCount() > 0){
                 </div>
                 </form>       
              </div>
+             <hr>
              <?php
             }
          }else{
