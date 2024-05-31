@@ -113,7 +113,7 @@ if(isset($_POST['submit'])){
 
     <div class="profile-content">
     <form action="" method="post" enctype="multipart/form-data"> 
-        <div class="display-container">
+        <div class="display-container" style="width: 80%; margin-bottom: 50px;">
             <div class="profile-container">
                 <img src="img/<?php if($fetch_profile['image'] != '') { echo $fetch_profile['image'];} else{ echo 'default.png';}  ?>" alt="Profile picture">
                 <input style="margin-left: 20%;" type="file" name="test" id="image" accept=".jpg, .jpeg, .png" value="">

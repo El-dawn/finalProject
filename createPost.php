@@ -69,7 +69,7 @@ if($select_profile->rowCount() > 0){
                 <span class="create-post-isko">ISKO</span><span class="create-post-log">LOG</span>
             </h1></a>
             <div class="create-post-nav-icons">
-                <img onclick="viewProfile()" src="img/<?php if(isset($fetch_profile)) {echo $fetch_profile['image'];} else { echo "default.png"; } ?>" alt="profile-icon">
+                <img onclick="viewProfile()" src="img/<?php if($fetch_profile['image'] != '') { $fetch_profile['image'];} else{ echo 'default.png';}  ?>" alt="profile-icon">
             </div>
         </div>
     </div>

@@ -222,11 +222,11 @@ a{
 
 .metadata {
     display: flex;
-    align-items: center; /* Aligns metadata vertically */
+    align-items: center; 
 }
 
 .trend-likes {
-    margin-left: 20px; /* Increased margin for better spacing */
+    margin-left: 20px; 
 }
 
 .trend-date {
@@ -376,6 +376,16 @@ a{
 }
 
 .display-container {
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 35%;
+    margin-left: 4%;
+}
+
+.edit-profile-display-container {
     text-align: center;
     border-radius: 10px;
     margin: 10px;
@@ -634,4 +644,31 @@ a{
     flex: 1;
     padding: 5px; 
     margin: 2px;
+}
+
+.createpost-container {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.createpost-btn {
+    display: inline-block; 
+    width: 100%; 
+}
+
+.createpost-btn button {
+    background-color: #319d2d;
+    color: white;
+    font-family: Dongle;
+    width: 100%;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px 300px; 
+    margin-bottom: 5%;
+}
+
+.createpost-btn button:hover {
+    background-color: #20691E;
 }

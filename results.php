@@ -120,7 +120,7 @@ if($select_profile->rowCount() > 0){
         </div>
 
     <div class="createpost-container">
-        <div class="createpost">
+        <div class="createpost-btn">
             <button onclick="createPost()">+ CREATE POST</button>
         </div>
     </div>    

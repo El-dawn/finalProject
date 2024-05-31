@@ -138,10 +138,10 @@ if(isset($_SESSION['user_id'])){
     </div>
     
     <div class="createpost-container">
-        <div class="createpost">
+        <div class="createpost-btn">
             <button onclick="createPost()">+ CREATE POST</button>
         </div>
-    </div>
+    </div>    
     
 </body>
 </html>
