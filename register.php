@@ -1,5 +1,4 @@
 <?php
-
 include 'connect.php';
 
 session_start();
@@ -8,7 +7,7 @@ if(isset($_SESSION['user_id'])){
    $user_id = $_SESSION['user_id'];
 }else{
    $user_id = '';
-};
+}
 
 if(isset($_POST['submit'])){
 
@@ -26,10 +25,10 @@ if(isset($_POST['submit'])){
    $row = $select_user->fetch(PDO::FETCH_ASSOC);
 
    if($select_user->rowCount() > 0){
-      $message[] = 'email already exists!';
+      $message[] = 'Email already exists!';
    }else{
       if($pass != $cpass){
-         $message[] = 'confirm password not matched!';
+         $message[] = 'Confirm password not matched!';
       }else{
          $insert_user = $conn->prepare("INSERT INTO `users`(name, email, password) VALUES(?,?,?)");
          $insert_user->execute([$name, $email, $cpass]);
@@ -42,9 +41,7 @@ if(isset($_POST['submit'])){
          }
       }
    }
-
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,32 +53,33 @@ if(isset($_POST['submit'])){
 </head>
 <body class="Login_Field">
 <div class="container" style="margin-top: 5%;">
-<div class="title-container">
-            <h1 class="title">
-                <span class="isko">ISKO</span><span class="log">LOG</span>
-            </h1>
-        </div>
-        <div class="desc-container">
-            <p class="desc">UPV's Blogging Platform</p>
-        </div>
-        <div class="login-container">
+    <div class="title-container">
+        <h1 class="title">
+            <span class="isko">ISKO</span><span class="log">LOG</span>
+        </h1>
+    </div>
+    <div class="desc-container">
+        <p class="desc">UPV's Blogging Platform</p>
+    </div>
+    <div class="login-container">
         <form action="" method="post">
             <h1>Register</h1>
             <div class="input-box">                
-                <input type="text" name= "name" placeholder="Enter name" required>
+                <input type="text" name="name" placeholder="Enter name" required>
             </div>
             <div class="input-box">                
-                <input type="text" name= "email" placeholder="Enter email" required>
+                <input type="text" name="email" placeholder="Enter email" required>
             </div>
             <div class="input-box">
-                <input type="password" name= "pass" placeholder="Enter password" required>
+                <input type="password" name="pass" placeholder="Enter password" required>
             </div>
             <div class="input-box">
-                <input type="password" name= "cpass" placeholder="Confirm Password" required>
+                <input type="password" name="cpass" placeholder="Confirm Password" required>
             </div>
-            <button type="submit" name= "submit" class="btn">Register Now</button>
+            <button type="submit" name="submit" class="btn">Register Now</button>
+            <p>Already have an account? <a href="login.php">Login here</a></p>
         </form>
-</div>
     </div>
+</div>
 </body>
-</html> 
+</html>

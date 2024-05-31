@@ -672,3 +672,9 @@ a{
 .createpost-btn button:hover {
     background-color: #20691E;
 }
+
+
+.container {
+    text-align: center;
+    margin-top: 10%;
+}

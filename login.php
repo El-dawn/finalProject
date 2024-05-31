@@ -13,7 +13,6 @@ if(isset($_POST['submit'])){
    $user = $_POST['username'];
    $pass = sha1($_POST['password']);
 
-   // Check if the username is an email or not
    if (filter_var($user, FILTER_VALIDATE_EMAIL)) {
       $email = $user;
       $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ?");
@@ -30,8 +29,8 @@ if(isset($_POST['submit'])){
       $_SESSION['user_id'] = $row['id'];
       $message[] = 'Login successful';
       header('location:home.php');
-      exit; // Make sure to exit after header redirect
-   }else{
+      exit; 
+   } else {
       $message[] = 'Incorrect username or password!';
    }
 }
@@ -59,6 +58,7 @@ if(isset($_POST['submit'])){
                 <input type="text" name="username" placeholder="Username/Email" required><br>
                 <input type="password" name="password" placeholder="Password" required><br>
                 <button class="submit" type="submit" name="submit">Sign in</button>
+                <p>Don't have an account? <a href="register.php">Register here</a></p>
             </form>
             <?php
             if(isset($message)){
