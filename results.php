@@ -114,7 +114,7 @@ if($select_profile->rowCount() > 0){
              <?php
             }
          }else{
-            echo '<p class="empty">no posts aded yet!</p>';
+            echo '<p class="empty">No results</p>';
         }
         ?>
         </div>
