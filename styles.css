@@ -390,6 +390,7 @@ a{
     margin-bottom: 10px;
     width: 100px;
     height: 100px;
+    margin-left: 2%;
 }
 
 .information-container {
@@ -614,4 +615,20 @@ a{
 .comment-content h2, .comment-content h4, .comment-content h3 {
     margin: 0;
     font-size: 14px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-group label {
+    width: 100px; 
+    margin-right: 10px;
+    text-align: left;
+}
+.form-group input {
+    flex: 1;
+    padding: 5px; 
+    margin: 2px;
 }

@@ -116,12 +116,19 @@ if(isset($_POST['submit'])){
         <div class="display-container">
             <div class="profile-container">
                 <img src="img/<?php if($fetch_profile['image'] != '') { echo $fetch_profile['image'];} else{ echo 'default.png';}  ?>" alt="Profile picture">
-                <input type="file" name="test" id="image" accept=".jpg, .jpeg, .png" value="">
+                <input style="margin-left: 20%;" type="file" name="test" id="image" accept=".jpg, .jpeg, .png" value="">
             </div>
             <h1 class="username"><?= $fetch_profile['username']; ?></h1>
             <h2 class="name"><?=$fetch_profile['name']; ?></h2>
-            <h2 class="pronoun"><input type="text" name="pronouns" placeholder="<?= isset($fetch_profile['pronouns']) ? $fetch_profile['pronouns'] : 'pronouns'; ?>"  ></h2>
-            <p class="bio"><input type="text" name="about" placeholder="<?= isset($fetch_profile['about']) ? $fetch_profile['about'] : 'say something about yourself'; ?>" ></p>
+            <div class="form-group">
+               <label style="margin-right: 10px;" for="pronouns"><b>Pronouns</b></label>
+               <input style="margin-bottom: 10px;" type="text" id="pronouns" name="pronouns" placeholder="<?= isset($fetch_profile['pronouns']) ? $fetch_profile['pronouns'] : 'pronouns'; ?>" >
+            </div>
+
+            <div class="form-group">
+               <label style="margin-right: 10px;" for="about"><b>Bio</b></label>
+               <input type="text" id="about" name="about" placeholder="<?= isset($fetch_profile['about']) ? $fetch_profile['about'] : 'say something about yourself'; ?>" >
+            </div>
         </div>
         
         <div>
