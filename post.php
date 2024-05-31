@@ -41,29 +41,6 @@ if(isset($_POST['add_comment'])){
 
 }
 
-if(isset($_POST['edit_comment'])){
-   $edit_comment_id = $_POST['edit_comment_id'];
-   $comment_edit_box = $_POST['comment_edit_box'];
-
-   $verify_comment = $conn->prepare("SELECT * FROM `comments` WHERE comment = ? AND id = ?");
-   $verify_comment->execute([$comment_edit_box, $edit_comment_id]);
-
-   if($verify_comment->rowCount() > 0){
-      $message[] = 'comment already added!';
-   }else{
-      $update_comment = $conn->prepare("UPDATE `comments` SET comment = ? WHERE id = ?");
-      $update_comment->execute([$comment_edit_box, $edit_comment_id]);
-      $message[] = 'your comment edited successfully!';
-   }
-}
-
-if(isset($_POST['delete_comment'])){
-   $delete_comment_id = $_POST['comment_id'];
-   $delete_comment = $conn->prepare("DELETE FROM `comments` WHERE id = ?");
-   $delete_comment->execute([$delete_comment_id]);
-   $message[] = 'comment deleted successfully!';
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -147,7 +124,9 @@ if(isset($_POST['delete_comment'])){
             <br>
         </div>
         <div class="content-post">
-            <p><?= $fetch_posts['content']; ?></p>
+            <div class="content-post-text">
+            <?= $fetch_posts['content']; ?>
+                </div>
         </div>
     </div>
     <?php
